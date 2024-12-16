@@ -1,5 +1,5 @@
 # Entity-tagger
-This is code to run an bi-LSTM entity tagger
+This is code to run a bi-LSTM entity tagger
 
 There are the following files in this repository:
 
