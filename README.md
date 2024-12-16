@@ -3,7 +3,7 @@ This is code to run a bi-LSTM entity tagger
 
 There are the following files in this repository:
 
-1. requirements.txt:\n
+1. requirements.txt:
 A file containing the required libraries to run the code.
 
 2. run.py:
