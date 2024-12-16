@@ -1,0 +1,8 @@
+There are 2 files provided in the homework2 zip file:
+
+1. requirements.txt
+A file containing the required libraries to run the code.
+
+2. run.py
+A file containing the code for the homework. The NUM_EPOCHS has been reduced to curb long runtimes, to get the same results as the final model, set the NUM_EPOCHS to 150.
+
