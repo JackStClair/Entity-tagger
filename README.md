@@ -1,19 +1,48 @@
-# Entity-tagger
-This is code to run a bi-LSTM entity tagger
+# Entity Tagger
 
-There are the following files in this repository:
+![Build Status](https://img.shields.io/badge/build-not%20configured-lightgrey)
+![Test Coverage](https://img.shields.io/badge/coverage-not%20tracked-lightgrey)
+![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)
+![PyTorch](https://img.shields.io/badge/pytorch-2.5.1-ee4c2c)
 
-1. requirements.txt:
-A file containing the required libraries to run the code.
+BiLSTM-based named entity tagging pipeline for slot-tag prediction from utterances.
 
-2. run.py:
-A file containing the code for the homework. The NUM_EPOCHS has been reduced to curb long runtimes, to get the same results as the final model, set the NUM_EPOCHS to 150.
+## Repository Contents
 
-3. hw2_train.csv:
-A file containing the train data
+- `run.py`: Trains a BiLSTM tagger, evaluates validation F1, saves the best model, and writes predictions.
+- `requirements.txt`: Python dependencies.
+- `hw2_train.csv`: Training dataset.
+- `hw2_test.csv`: Test dataset for prediction.
+- `run.sh`: End-to-end shell script for zipped homework workflow (`hw2.zip` -> `record.txt` logs).
 
-4. hw2_test.csv:
-A file containing the test data
+## Quick Start
 
-5. run.sh:
-A file containing a script to run all of the above files when in a zip named hw2.zip
+### 1) Create and activate a virtual environment
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+### 2) Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3) Run training and generate predictions
+
+```bash
+python run.py
+```
+
+This creates:
+
+- `best_model.pt` (best checkpoint during training)
+- `submission.csv` (predicted IOB slot tags for test utterances)
+
+## Notes
+
+- `NUM_EPOCHS` in `run.py` is currently set to `30` for faster runtime.
+- For the original longer training setup, set `NUM_EPOCHS = 150`.
+- The script reads `hw2_train.csv` and `hw2_test.csv` from the repository root.
